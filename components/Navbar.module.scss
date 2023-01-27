@@ -1,0 +1,45 @@
+.navigation {
+  width: 100%;
+  position: absolute;
+  padding: 2em 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  .container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+
+    .nav_list {
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 500px;
+      max-width: 90%;
+      font-size: 0.9rem;
+
+      // border: 2px solid red;
+
+      .nav_item {
+        color: white;
+        text-decoration: none;
+      }
+      .nav_button {
+        color: white;
+        background-color: #a4161a;
+        border: none;
+        outline: none;
+        padding: 0.75em 1em;
+        border-radius: 5px;
+
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
