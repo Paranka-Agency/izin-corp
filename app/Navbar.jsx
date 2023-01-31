@@ -29,9 +29,9 @@ const Navbar = () => {
           </Link>
           <Link
             className={`${styles.nav_item} ${
-              path == "/service" ? styles.bold : ""
+              path == "/services" ? styles.bold : ""
             }`}
-            href="/service"
+            href="/services"
           >
             Services
           </Link>
