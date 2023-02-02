@@ -1,0 +1,54 @@
+.service_container {
+  min-height: 100vh;
+  //   max-width: 1400px;
+  //   width: 90%;
+  padding-top: 7.5rem;
+  margin: 0 auto;
+
+  //   border-bottom: 1px solid #f5f3f483;
+
+  // border: 2px solid red;
+
+  .description {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 1400px;
+    max-width: 90%;
+    margin: 0 auto 5rem;
+    //   border: 2px solid white;
+
+    h2 {
+      width: 40%;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 3.25rem;
+    }
+    p {
+      width: 55%;
+      font-family: "Pridi", serif;
+      font-weight: 300;
+      font-size: 1.5rem;
+    }
+  }
+
+  .list {
+    padding: 0 5rem;
+    position: relative;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8rem;
+    overflow: auto;
+    // border: 2px solid red;
+  }
+
+  .line {
+    height: 1px;
+    width: 1400px;
+    max-width: 90%;
+    margin: 7.5rem auto 0;
+    background-color: #f5f3f483;
+  }
+}

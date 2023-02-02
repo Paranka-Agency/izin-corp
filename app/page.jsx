@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "./page.module.scss";
+import ServiceCard from "./comp/ServiceCard";
+import ReviewCard from "./comp/ReviewCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +29,9 @@ export default function Home() {
         <div className={styles.container}>
           <h2>We are here to give you special service.</h2>
           <div className={styles.list}>
-            <div className={styles.item}>
-              <div className={styles.card}>
-                <div className={styles.info}></div>
-              </div>
-              <h4>Spesialis Perizinan</h4>
-            </div>
+            <ServiceCard />
+            <ServiceCard />
+            <ServiceCard />
           </div>
         </div>
       </section>
@@ -40,18 +39,9 @@ export default function Home() {
         <div className={styles.container}>
           <h2>Apa pendapat orang lain tentang kami?</h2>
           <div className={styles.card_container}>
-            <div className={styles.card}>
-              <div className={styles.image}></div>
-              <div className={styles.info}>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Volutpat ornare
-                  pellentesque nulla ultrices. Donec lectus in sodales lorem
-                  egestas non diam vel.
-                </p>
-                <h4>Nama Orang</h4>
-                <h5>Asal Perusahaan</h5>
-              </div>
-            </div>
+            <ReviewCard />
+            <ReviewCard />
+            <ReviewCard />
           </div>
         </div>
       </section>

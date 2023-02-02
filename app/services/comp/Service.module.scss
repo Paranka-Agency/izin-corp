@@ -1,0 +1,28 @@
+.service {
+  min-width: 700px;
+  max-width: 800px;
+
+  .image {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 1.5rem;
+    background-color: gray;
+  }
+
+  .service_description {
+    color: white;
+    width: 85%;
+
+    h2 {
+      margin-bottom: 0.25em;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 2rem;
+    }
+    p {
+      font-family: "Pridi", serif;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+  }
+}
