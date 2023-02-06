@@ -1,3 +1,5 @@
+@import "../base.scss";
+
 .footer {
   background-color: #f5f3f4;
   font-family: "Montserrat", sans-serif;
@@ -26,12 +28,21 @@
         h1 {
           font-size: 5rem;
           margin-bottom: 0.25em;
+
+          @include respon("phone-pot") {
+            font-size: 3.5rem;
+          }
         }
 
         h5 {
           font-weight: 200;
           font-size: 1rem;
           margin-bottom: 0.75em;
+          word-wrap: break-word;
+
+          @include respon("phone-pot") {
+            font-size: 0.9rem;
+          }
         }
 
         button {
@@ -81,6 +92,26 @@
 
     .bottom {
       padding: 30px 0;
+
+      @include respon("phone-pot") {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  @include respon("tb-pot") {
+    .container {
+      .top {
+        justify-content: center;
+        .left {
+          max-width: 100%;
+          border-right: none;
+          text-align: center;
+        }
+        .right {
+          display: none;
+        }
+      }
     }
   }
 }

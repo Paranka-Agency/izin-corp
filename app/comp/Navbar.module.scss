@@ -1,3 +1,5 @@
+@import "../base.scss";
+
 .navigation {
   width: 100%;
   position: fixed;
@@ -17,6 +19,10 @@
 
     color: white;
 
+    .toggle_button {
+      display: none;
+    }
+
     .nav_list {
       color: white;
       display: flex;
@@ -34,7 +40,7 @@
       }
       .nav_item.bold {
         font-weight: 800;
-        font-size: 1.1rem;
+        font-size: 1.1em;
       }
       .nav_button {
         color: white;
@@ -58,5 +64,59 @@
 
   &.scroll {
     visibility: hidden;
+  }
+
+  @include respon("tb-pot") {
+    .container {
+      justify-content: flex-end;
+
+      .toggle_button {
+        display: block;
+      }
+      h1 {
+        display: none;
+      }
+      .nav_list {
+        display: none;
+      }
+    }
+
+    &.mobile_active {
+      .container {
+        width: 500px;
+        max-width: 90%;
+        height: 100vh;
+        padding: 1rem 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: #f5f3f4;
+
+        .toggle_button {
+          position: absolute;
+          top: 1.25rem;
+          right: 1rem;
+        }
+        h1 {
+          display: block;
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+        .nav_list {
+          display: flex;
+          flex-direction: column;
+
+          .nav_item {
+            margin-bottom: 1em;
+            font-size: 1.8rem;
+          }
+          .nav_button {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
   }
 }

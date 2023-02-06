@@ -9,8 +9,9 @@ const Navbar = () => {
   const path = usePathname();
 
   return (
-    <nav className={`${styles.navigation} `}>
+    <nav className={`${styles.navigation}`}>
       <div className={`${styles.container} ${styles.dark}`}>
+        <button className={styles.toggle_button}>O</button>
         <h1>LOGO</h1>
         <div className={styles.nav_list}>
           <Link
