@@ -1,13 +1,9 @@
+@import "../../base.scss";
+
 .service_container {
   min-height: 100vh;
-  //   max-width: 1400px;
-  //   width: 90%;
   padding-top: 7.5rem;
   margin: 0 auto;
-
-  //   border-bottom: 1px solid #f5f3f483;
-
-  // border: 2px solid red;
 
   .description {
     display: flex;
@@ -29,6 +25,28 @@
       font-family: "Pridi", serif;
       font-weight: 300;
       font-size: 1.5rem;
+    }
+
+    @include respon(tb-pot) {
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.25rem;
+      }
+    }
+    @include respon(phone-land) {
+      flex-direction: column;
+
+      h2 {
+        width: 100%;
+        font-size: 2.25rem;
+        margin-bottom: 20px;
+      }
+      p {
+        width: 100%;
+        font-size: 1.1rem;
+      }
     }
   }
 

@@ -1,3 +1,4 @@
+@import "../base.scss";
 .item {
   .card {
     background-color: gray;
@@ -15,8 +16,8 @@
     }
 
     .info {
-      width: 350px;
-      height: 500px;
+      width: inherit;
+      height: inherit;
       background-color: white;
       transform: translateX(115%);
       transition: 0.5s;
@@ -28,5 +29,24 @@
     font-weight: bold;
     font-size: 1.75rem;
     color: white;
+  }
+
+  @include respon(phone-land) {
+    .card {
+      width: 300px;
+      height: 400px;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+  @include respon(phone-pot) {
+    .card {
+      width: 250px;
+      height: 350px;
+    }
+    h4 {
+      font-size: 1.25rem;
+    }
   }
 }

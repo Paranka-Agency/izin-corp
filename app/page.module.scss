@@ -35,6 +35,27 @@
       color: white;
       text-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
     }
+
+    @include respon(desktop-small) {
+      h1 {
+        font-size: 8rem;
+      }
+    }
+    @include respon(tb-pot) {
+      h1 {
+        font-size: 6rem;
+      }
+    }
+    @include respon(phone-land) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+    @include respon(phone-pot) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
   }
 
   .about {
@@ -58,13 +79,104 @@
         font-weight: bold;
         font-size: 3.8rem;
         color: white;
+        z-index: 1;
+        position: relative;
       }
       p {
+        position: relative;
         width: 60%;
         font-weight: 300;
         font-family: "Pridi", serif;
         font-size: 1.2rem;
         color: white;
+        z-index: 1;
+      }
+      button {
+        @include button(main);
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+      }
+      .image {
+        position: absolute;
+        border-radius: 5px;
+        z-index: 0;
+        background-color: darkgray;
+
+        &.left {
+          width: 40%;
+          max-width: 600px;
+          height: 280px;
+          left: -50px;
+          bottom: -100px;
+        }
+        &.right {
+          width: 50%;
+          max-width: 650px;
+          height: 350px;
+          top: -50px;
+          right: -100px;
+        }
+      }
+    }
+
+    @include respon(desktop-small) {
+      .container {
+        h1 {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    @include respon(tb-pot) {
+      .container {
+        height: auto;
+        min-height: auto;
+        h1 {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 1rem;
+          margin-bottom: 2rem;
+          width: 100%;
+        }
+        button {
+          position: static;
+          font-size: 1rem;
+        }
+        .image {
+          display: none;
+        }
+      }
+    }
+    @include respon(phone-land) {
+      .container {
+        padding: 50px;
+        h1 {
+          font-size: 1.8rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        button {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    @include respon(phone-pot) {
+      .container {
+        padding: 30px;
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        button {
+          font-size: 0.8rem;
+        }
       }
     }
   }
@@ -96,6 +208,21 @@
         column-gap: 3rem;
       }
     }
+
+    @include respon(tb-pot) {
+      .container {
+        h2 {
+          margin-right: 3em;
+        }
+      }
+    }
+    @include respon(phone-land) {
+      .container {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
   }
 
   .review {
@@ -118,8 +245,8 @@
         padding: 80px 0;
         font-family: "Montserrat", sans-serif;
         font-weight: bold;
-        font-size: 2.5rem;
-        width: 350px;
+        font-size: 2rem;
+        width: 300px;
         color: white;
       }
 
@@ -128,7 +255,49 @@
         column-gap: 10px;
         position: absolute;
         top: 70px;
-        left: 28rem;
+        left: 26rem;
+      }
+    }
+
+    @include respon(desktop-small) {
+      .container {
+        padding: 40px 60px;
+        h2 {
+          padding: 10px 0;
+          margin-bottom: 1rem;
+        }
+        .card_container {
+          position: static;
+        }
+      }
+    }
+    @include respon(tb-pot) {
+      .container {
+        h2 {
+          width: 70%;
+        }
+        .card_container {
+          margin: 0 auto;
+          overflow: auto;
+        }
+      }
+    }
+    @include respon(phone-land) {
+      .container {
+        height: auto;
+        min-height: auto;
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    @include respon(phone-pot) {
+      .container {
+        padding: 0 10px 20px;
+        h2 {
+          font-size: 1.25rem;
+          width: 100%;
+        }
       }
     }
   }

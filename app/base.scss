@@ -2,6 +2,19 @@
   border: 2px solid $color;
 }
 
+@mixin button($type) {
+  @if $type == main {
+    color: white;
+    background-color: #a4161a;
+    border: none;
+    outline: none;
+    padding: 0.75em 1em;
+    border-radius: 5px;
+
+    font-size: 1.25rem;
+  }
+}
+
 @mixin respon($breakpoint) {
   @if $breakpoint == phone-pot {
     @media only screen and (max-width: 480px) {

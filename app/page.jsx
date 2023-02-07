@@ -21,6 +21,9 @@ export default function Home() {
             suspendisse sed elit. Fusce quam sit duis purus curabitur donec
             porttitor tortor pharetra.
           </p>
+          <button>Lihat Selengkapnya</button>
+          <div className={`${styles.image} ${styles.left}`}></div>
+          <div className={`${styles.image} ${styles.right}`}></div>
           {/* <Image/>
           <Image/> */}
         </div>

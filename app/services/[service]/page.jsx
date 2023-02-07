@@ -19,8 +19,8 @@ const page = () => {
           <div className={styles.box}></div>
         </article>
         <article>
-          <div className={styles.box}></div>
           <h2>Hal-hal lain yang mungkin dibutuhkan</h2>
+          <div className={styles.box}></div>
         </article>
         <article>
           <h2>Yang anda dapatkan</h2>
