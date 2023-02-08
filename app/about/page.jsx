@@ -22,16 +22,26 @@ const page = () => {
       <section className={styles.about}>
         <div className={styles.text_container}>
           <p>
-            Lorem ipsum dolor sit amet consectetur. Sit tellus nisl morbi sit
-            ullamcorper diam. Neque dictum fermentum turpis in ornare
-            suspendisse sed elit. Fusce quam sit duis purus curabitur donec
-            porttitor tortor pharetra.
+            IZIN CORP merupakan Konsultan berbadan hukum yang berfokus menangani
+            perizinan berusaha, manajemen bisnis, dan perpajakan badan usaha
+            atau perorangan.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur. Sit tellus nisl morbi sit
-            ullamcorper diam. Neque dictum fermentum turpis in ornare
-            suspendisse sed elit. Fusce quam sit duis purus curabitur donec
-            porttitor tortor pharetra.
+            IZIN CORP memberikan solusi dalam mengurus segala perijinan usaha,
+            pendirian badan usaha, perizinan berbasis resiku, hukum dan
+            perpajakan baik badan usaha maupun perorangan, serta menyediakan
+            penyewaan virtual office.
+          </p>
+          <p>
+            Kami memiliki :
+            <ol>
+              <li>Integritas</li>
+              <li>Loyal</li>
+              <li>Inovasi</li>
+              <li>Sikap Positif</li>
+              <li>Perbaikan Berkelanjutan</li>
+              <li>Komitmen</li>
+            </ol>
           </p>
         </div>
         <div className={styles.certification}>

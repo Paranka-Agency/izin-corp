@@ -36,14 +36,14 @@ const Navbar = () => {
           >
             Services
           </Link>
-          <Link
+          {/* <Link
             className={`${styles.nav_item} ${
               path == ".article" ? styles.bold : ""
             }`}
             href="article"
           >
             Article
-          </Link>
+          </Link> */}
 
           <Link href="">
             <button className={styles.nav_button}>Contact Us</button>

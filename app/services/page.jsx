@@ -1,6 +1,7 @@
 import React from "react";
 import ServiceSection from "./comp/ServiceSection";
 import styles from "./services.module.scss";
+import services from "@/data/services";
 
 const page = () => {
   return (
@@ -8,9 +9,9 @@ const page = () => {
       <section className={styles.hero}>
         <h1>OUR SERVICES</h1>
       </section>
-      <ServiceSection />
-      <ServiceSection />
-      <ServiceSection />
+      {services.map((service) => (
+        <ServiceSection data={service} key={service.id} />
+      ))}
       <section className={styles.private_office_container}>
         <h1>OUR Private Office</h1>
         <div className={styles.office}>

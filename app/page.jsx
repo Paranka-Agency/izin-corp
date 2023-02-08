@@ -16,10 +16,9 @@ export default function Home() {
         <div className={styles.container}>
           <h1>SEKILAS TENTANG KAMI</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur. Sit tellus nisl morbi sit
-            ullamcorper diam. Neque dictum fermentum turpis in ornare
-            suspendisse sed elit. Fusce quam sit duis purus curabitur donec
-            porttitor tortor pharetra.
+            IZIN CORP merupakan Konsultan berbadan hukum yang berfokus menangani
+            perizinan berusaha, manajemen bisnis, dan perpajakan badan usaha
+            atau perorangan
           </p>
           <button>Lihat Selengkapnya</button>
           <div className={`${styles.image} ${styles.left}`}></div>

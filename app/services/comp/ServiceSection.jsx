@@ -3,22 +3,18 @@ import Service from "./Service";
 
 import styles from "./ServiceSection.module.scss";
 
-const ServiceSection = () => {
+const ServiceSection = ({ data }) => {
+  console.log(data);
   return (
     <section className={styles.service_container}>
       <div className={styles.description}>
-        <h2>Spesialis perizinan</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Sit tellus nisl morbi sit
-          ullamcorper diam. Neque dictum fermentum turpis in ornare suspendisse
-          sed elit. Fusce quam sit duis purus curabitur donec porttitor tortor
-          pharetra.
-        </p>
+        <h2>{data.title}</h2>
+        <p>{data.desc}</p>
       </div>
       <div className={styles.list}>
-        <Service />
-        <Service />
-        <Service />
+        {data.service.map((service) => (
+          <Service data={service} key={service.id} />
+        ))}
       </div>
       <div className={styles.line}></div>
     </section>

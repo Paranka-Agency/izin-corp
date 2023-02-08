@@ -1,19 +1,20 @@
+import Image from "next/image";
 import React from "react";
 import styles from "./Service.module.scss";
 
-const Service = () => {
+const Service = ({ data }) => {
   return (
     <div className={styles.service}>
-      <div className={styles.image}></div>
+      {/* <div className={styles.image}></div> */}
+      <Image
+        className={styles.image}
+        src={data.image}
+        width={700}
+        height={500}
+      />
       <div className={styles.service_description}>
-        <h2>Perkebunan</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Nec convallis quis aenean sed.
-          Lacus lorem senectus cras aenean sit dui. Amet amet viverra
-          sollicitudin tortor. In aenean morbi id turpis mauris ac augue
-          eleifend scelerisque. Nibh est id eget quis augue egestas justo sem
-          volutpat. Dui purus lectus eu pretium amet nam.
-        </p>
+        <h2>{data.title}</h2>
+        <p>{data.desc}</p>
       </div>
     </div>
   );
