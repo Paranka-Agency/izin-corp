@@ -3,6 +3,7 @@ import { Inter } from "@next/font/google";
 import styles from "./page.module.scss";
 import ServiceCard from "./comp/ServiceCard";
 import ReviewCard from "./comp/ReviewCard";
+import services from "@/data/services";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,9 +32,9 @@ export default function Home() {
         <div className={styles.container}>
           <h2>We are here to give you special service.</h2>
           <div className={styles.list}>
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+            {services.map((service) => (
+              <ServiceCard data={service} id={service.id} key={service.id} />
+            ))}
           </div>
         </div>
       </section>

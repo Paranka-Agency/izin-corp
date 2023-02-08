@@ -10,7 +10,7 @@ const page = () => {
         <h1>OUR SERVICES</h1>
       </section>
       {services.map((service) => (
-        <ServiceSection data={service} key={service.id} />
+        <ServiceSection data={service} id={service.id} key={service.id} />
       ))}
       <section className={styles.private_office_container}>
         <h1>OUR Private Office</h1>

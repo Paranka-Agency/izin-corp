@@ -198,7 +198,7 @@
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
         font-size: 3rem;
-        width: 250px;
+        min-width: 250px;
         color: white;
         margin-right: 7em;
       }
@@ -206,6 +206,7 @@
       .list {
         display: flex;
         column-gap: 3rem;
+        padding-right: 3rem;
       }
     }
 
