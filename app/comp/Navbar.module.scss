@@ -9,6 +9,8 @@
 
   font-family: "Montserrat", sans-serif;
 
+  transition: 0.2s;
+
   .container {
     width: 90%;
     max-width: 1400px;
@@ -16,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.5s;
 
     color: white;
 
@@ -63,7 +66,8 @@
   }
 
   &.scroll {
-    visibility: hidden;
+    // visibility: hidden;
+    // opacity: 0;
   }
 
   @include respon("tb-pot") {

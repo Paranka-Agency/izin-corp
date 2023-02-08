@@ -2,15 +2,43 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
+import React, { useState, useEffect, useRef, use } from "react";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const path = usePathname();
 
+  const [scrollTop, setScrollTop] = useState(0);
+  const prevScroll = useRef();
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      setScrollTop(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    prevScroll.current = scrollTop;
+  }, [scrollTop]);
+
   return (
-    <nav className={`${styles.navigation}`}>
-      <div className={`${styles.container} ${styles.dark}`}>
+    <nav
+      className={`${styles.navigation} ${
+        prevScroll.current < scrollTop ? styles.scroll : ""
+      }`}
+    >
+      <p>{scrollTop}</p>
+      <div
+        className={`${styles.container} ${
+          path == "/about" ? (scrollTop < 5500 ? styles.dark : "") : ""
+        }`}
+      >
         <button className={styles.toggle_button}>O</button>
         <h1>LOGO</h1>
         <div className={styles.nav_list}>
