@@ -12,6 +12,7 @@
 
     .top {
       border-bottom: 1px solid black;
+      height: 25rem;
       display: flex;
       width: 100%;
       justify-content: flex-start;
@@ -59,6 +60,7 @@
       }
 
       .right {
+        height: 100%;
         padding: 30px 40px;
         flex-grow: 1;
 
@@ -70,21 +72,26 @@
 
         .service_container {
           display: flex;
-          column-gap: 3em;
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 100%;
 
-          h4 {
-            font-size: 1.15rem;
-            font-weight: 500;
-            margin-bottom: 0.25em;
-          }
+          .item {
+            width: 20rem;
+            h4 {
+              font-size: 1.15rem;
+              font-weight: 500;
+              margin-bottom: 0.25em;
+            }
 
-          li {
-            text-decoration: none;
-            list-style: none;
-            font-size: 0.9rem;
-            font-weight: 200;
-            margin-bottom: 0.4em;
-            padding-left: 2em;
+            li {
+              text-decoration: none;
+              list-style: none;
+              font-size: 0.9rem;
+              font-weight: 200;
+              margin-bottom: 0.4em;
+              padding-left: 2em;
+            }
           }
         }
       }

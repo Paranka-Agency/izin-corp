@@ -33,10 +33,17 @@ const Navbar = () => {
         prevScroll.current < scrollTop ? styles.scroll : ""
       }`}
     >
-      <p>{scrollTop}</p>
       <div
         className={`${styles.container} ${
-          path == "/about" ? (scrollTop < 5500 ? styles.dark : "") : ""
+          path == "/about"
+            ? scrollTop > 5500
+              ? ""
+              : styles.dark
+            : path == "/services"
+            ? ""
+            : path == "/"
+            ? ""
+            : styles.dark
         }`}
       >
         <button className={styles.toggle_button}>O</button>

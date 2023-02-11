@@ -32,7 +32,7 @@ const page = () => {
   }, [inView]);
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} data-scroll-container>
       <section className={styles.hero}>
         <motion.h1 animate={titleAnimate} transition={titleTransition}>
           IZIN <span>CORP</span>

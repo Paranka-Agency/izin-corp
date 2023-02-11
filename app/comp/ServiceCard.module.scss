@@ -2,32 +2,22 @@
 .item {
   text-decoration: none;
   .card {
-    background-color: gray;
     width: 400px;
     height: 500px;
     margin-bottom: 1em;
     border-radius: 5px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     overflow: hidden;
-
-    // /* Add the blur effect */
-    // filter: blur(8px);
-    // -webkit-filter: blur(8px);
+    transition: 0.5s;
 
     &.image1 {
-      background: url("https://images.pexels.com/photos/261621/pexels-photo-261621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background: url("../../public/images/home/serviceCard-1.webp");
     }
     &.image2 {
-      background: url("https://images.pexels.com/photos/3673458/pexels-photo-3673458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background: url("../../public/images/home/serviceCard-2.webp");
     }
     &.image3 {
-      background: url("https://images.pexels.com/photos/5668484/pexels-photo-5668484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    }
-
-    &:hover {
-      .info {
-        transform: translateX(15%);
-      }
+      background: url("../../public/images/home/serviceCard-3.webp");
     }
 
     .info {
@@ -64,6 +54,15 @@
     font-weight: bold;
     font-size: 1.75rem;
     color: white;
+  }
+
+  &:hover {
+    .card {
+      box-shadow: 0 4px 4px rgba(255, 255, 255, 0.75);
+      .info {
+        transform: translateX(15%);
+      }
+    }
   }
 
   @include respon(phone-land) {

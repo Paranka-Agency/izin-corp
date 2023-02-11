@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import Footer from "./comp/Footer";
 import Navbar from "./comp/Navbar";
 import "./globals.scss";

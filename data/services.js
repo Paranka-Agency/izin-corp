@@ -374,7 +374,8 @@ const services = [
         title: "Konsultasi Hukum",
         slug: "konsultasi-hukum",
         desc: "Lorem ipsum dolor sit amet consectetur. Nec convallis quis aenean sed. Lacus lorem senectus cras aenean sit dui. Amet amet viverra sollicitudin tortor. In aenean morbi id turpis mauris ac augue eleifend scelerisque. Nibh est id eget quis augue egestas justo sem volutpat. Dui purus lectus eu pretium amet nam.",
-        image: "",
+        image:
+          "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         information: {
           sp: [
             {

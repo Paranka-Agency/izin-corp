@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "./page.module.scss";
 import ServiceCard from "./comp/ServiceCard";
 import ReviewCard from "./comp/ReviewCard";
 import services from "@/data/services";
+import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
