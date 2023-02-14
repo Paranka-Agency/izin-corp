@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 import services from "@/data/services";
+import Link from "next/link";
+import Image from "next/image";
+
+import Logo from "@/public/images/logo-dark.png";
 
 const Footer = () => {
   return (
@@ -9,7 +13,9 @@ const Footer = () => {
         <div className={styles.top}>
           <div className={styles.left}>
             {/* LEFT */}
-            <h1>LOGO</h1>
+            <div className={styles.logo_container}>
+              <Image className={styles.logo} fill={true} src={Logo} />
+            </div>
             <h5>
               Jl. Karya Baru, Komplek. Taman Spain, Nomor. 1 <br />
               Pontianak Selatan, Kota Pontianak,
@@ -27,11 +33,17 @@ const Footer = () => {
                 return (
                   <div className={styles.item}>
                     <h4>{s.title}</h4>
-                    <ul>
+                    <div className={styles.link_container}>
                       {s.service.map((s) => (
-                        <li>{s.title}</li>
+                        <Link
+                          className={styles.link}
+                          prefetch={false}
+                          href={`services/${s.slug}`}
+                        >
+                          {s.title}
+                        </Link>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 );
               })}
