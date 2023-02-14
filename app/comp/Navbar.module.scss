@@ -11,6 +11,21 @@
 
   transition: 0.5s;
 
+  .toggle_button {
+    display: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: absolute;
+    z-index: 5;
+
+    .icon {
+      font-size: 2rem;
+      background-color: none;
+      color: white;
+    }
+  }
+
   .container {
     width: 90%;
     max-width: 1400px;
@@ -22,10 +37,6 @@
 
     color: white;
 
-    .toggle_button {
-      display: none;
-    }
-
     .nav_list {
       color: white;
       display: flex;
@@ -34,16 +45,18 @@
       width: 500px;
       max-width: 90%;
       font-size: 0.9rem;
+      list-style: none;
 
       // border: 2px solid red;
 
       .nav_item {
         color: white;
         text-decoration: none;
-      }
-      .nav_item.bold {
-        font-weight: 800;
-        font-size: 1.1em;
+        cursor: pointer;
+        &.bold {
+          font-weight: 800;
+          font-size: 1.1em;
+        }
       }
       .nav_button {
         color: white;
@@ -52,6 +65,7 @@
         outline: none;
         padding: 0.75em 1em;
         border-radius: 5px;
+        cursor: pointer;
 
         font-size: 0.9rem;
       }
@@ -59,6 +73,11 @@
 
     &.dark {
       color: black;
+      .toggle_button {
+        .icon {
+          color: black;
+        }
+      }
       .nav_item {
         color: black;
       }
@@ -71,55 +90,61 @@
   }
 
   @include respon("tb-pot") {
+    .toggle_button {
+      display: block;
+      top: 1.25rem;
+      right: 1rem;
+    }
     .container {
+      width: 500px;
+      max-width: 90%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem 2rem;
+      display: flex;
       justify-content: flex-end;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #f5f3f4;
+      color: black;
+      transform: translateX(100%);
+      opacity: 0;
 
-      .toggle_button {
-        display: block;
-      }
       h1 {
-        display: none;
+        font-size: 2rem;
+        margin-bottom: 2rem;
       }
       .nav_list {
-        display: none;
+        display: flex;
+        flex-direction: column;
+
+        .nav_item {
+          color: black;
+          margin-bottom: 1em;
+          font-size: 1.8rem;
+          opacity: 1;
+          &.bold {
+            font-size: 1.8rem;
+          }
+        }
+        .nav_button {
+          font-size: 1.5rem;
+          opacity: 1;
+        }
       }
     }
 
     &.mobile_active {
+      .toggle_button {
+        .icon {
+          color: inherit;
+        }
+      }
       .container {
-        width: 500px;
-        max-width: 90%;
-        height: 100vh;
-        padding: 1rem 2rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        flex-direction: column;
-        justify-content: flex-start;
-        background-color: #f5f3f4;
-
-        .toggle_button {
-          position: absolute;
-          top: 1.25rem;
-          right: 1rem;
-        }
-        h1 {
-          display: block;
-          font-size: 2rem;
-          margin-bottom: 2rem;
-        }
-        .nav_list {
-          display: flex;
-          flex-direction: column;
-
-          .nav_item {
-            margin-bottom: 1em;
-            font-size: 1.8rem;
-          }
-          .nav_button {
-            font-size: 1.5rem;
-          }
-        }
+        transform: translateX(0);
+        opacity: 1;
       }
     }
   }
