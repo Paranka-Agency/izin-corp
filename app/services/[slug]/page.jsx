@@ -15,21 +15,20 @@ const page = ({ params }) => {
 
   const service = data.service.find((s) => s.slug == params.slug);
 
-  console.log(service);
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
         <h1>{service.title}</h1>
         <p>{service.desc}</p>
-        {/* <div className={styles.image}></div> */}
-        <Image
-          src={service.image}
-          className={styles.image}
-          height={500}
-          width={900}
-          alt={service.slug}
-          priority
-        />
+        <div className={styles.image_container}>
+          <Image
+            src={service.image}
+            className={styles.image}
+            fill={true}
+            alt={service.slug}
+            priority
+          />
+        </div>
       </section>
       <section className={styles.description}>
         <article>

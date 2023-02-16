@@ -6,13 +6,10 @@ import styles from "./Service.module.scss";
 const Service = ({ data, parentId }) => {
   return (
     <div className={styles.service}>
-      <Link href={`/services/${data.slug}`}>
-        <Image
-          className={styles.image}
-          src={data.image}
-          width={700}
-          height={500}
-        />
+      <Link prefetch={false} href={`/services/${data.slug}`}>
+        <div className={styles.image_container}>
+          <Image className={styles.image} src={data.image} fill={true} />
+        </div>
       </Link>
       <div className={styles.service_description}>
         <h2>{data.title}</h2>

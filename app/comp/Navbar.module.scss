@@ -37,6 +37,15 @@
 
     color: white;
 
+    .logo {
+      width: 15rem;
+      height: 6rem;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("../../public/images/logo-white.png");
+    }
+
     .nav_list {
       color: white;
       display: flex;
@@ -70,13 +79,18 @@
         font-size: 0.9rem;
       }
     }
-
-    &.dark {
+  }
+  &.dark {
+    .toggle_button {
+      .icon {
+        color: black;
+      }
+    }
+    .container {
       color: black;
-      .toggle_button {
-        .icon {
-          color: black;
-        }
+
+      .logo {
+        background-image: url("../../public/images/logo-dark.png");
       }
       .nav_item {
         color: black;
@@ -111,6 +125,10 @@
       color: black;
       transform: translateX(100%);
       opacity: 0;
+
+      .logo {
+        background-image: url("../../public/images/logo-dark.png");
+      }
 
       h1 {
         font-size: 2rem;

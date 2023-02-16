@@ -6,6 +6,7 @@ import ServiceCard from "./comp/ServiceCard";
 import ReviewCard from "./comp/ReviewCard";
 import services from "@/data/services";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,11 +24,11 @@ export default function Home() {
             perizinan berusaha, manajemen bisnis, dan perpajakan badan usaha
             atau perorangan
           </p>
-          <button>Lihat Selengkapnya</button>
+          <Link prefetch={false} href={"/about"}>
+            <button>Lihat Selengkapnya</button>
+          </Link>
           <div className={`${styles.image} ${styles.left}`}></div>
           <div className={`${styles.image} ${styles.right}`}></div>
-          {/* <Image/>
-          <Image/> */}
         </div>
       </section>
       <section className={styles.service}>

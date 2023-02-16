@@ -3,8 +3,13 @@ import styles from "./Footer.module.scss";
 import services from "@/data/services";
 import Link from "next/link";
 import Image from "next/image";
-
-import Logo from "@/public/images/logo-dark.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faLocation,
+  faLocationDot,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -14,15 +19,28 @@ const Footer = () => {
           <div className={styles.left}>
             {/* LEFT */}
             <div className={styles.logo_container}>
-              <Image className={styles.logo} fill={true} src={Logo} />
+              <Image
+                className={styles.logo}
+                fill={true}
+                src={"/images/logo-dark.png"}
+              />
             </div>
-            <h5>
-              Jl. Karya Baru, Komplek. Taman Spain, Nomor. 1 <br />
-              Pontianak Selatan, Kota Pontianak,
-              <br /> Kalimantan Barat. 78121
-            </h5>
-            <h5>izincorporation@gmail.com</h5>
-            <h5>+62 813 34937494</h5>
+            <div className={styles.item}>
+              <FontAwesomeIcon icon={faLocationDot} className={styles.icon} />
+              <h5>
+                Jl. Karya Baru, Komplek. Taman Spain, Nomor. 1 <br />
+                Pontianak Selatan, Kota Pontianak,
+                <br /> Kalimantan Barat. 78121
+              </h5>
+            </div>
+            <div className={styles.item}>
+              <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
+              <h5>izincorporation@gmail.com</h5>
+            </div>
+            <div className={styles.item}>
+              <FontAwesomeIcon icon={faPhone} className={styles.icon} />
+              <h5>+62 813 34937494</h5>
+            </div>
             <button>Contact Us</button>
           </div>
           <div className={styles.right}>

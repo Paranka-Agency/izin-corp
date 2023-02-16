@@ -18,7 +18,7 @@
       font-weight: 800;
       font-size: 10rem;
       text-align: center;
-      text-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+      // text-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
 
       position: fixed;
       transform: translateY(40vh);
@@ -34,27 +34,33 @@
     .image {
       background-color: gray;
       position: absolute;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
 
       &:nth-child(2) {
-        width: 18vw;
-        height: 45vh;
-        left: 10vw;
+        width: 20vw;
+        height: 50vh;
+        left: 8vw;
         top: 50vh;
         z-index: -1;
+        background-image: url("../../public/images/about/about-1.jpg");
       }
       &:nth-child(3) {
         width: 42vw;
-        height: 43vh;
+        height: 50vh;
         right: 0vw;
         top: 80vh;
         z-index: 1;
+        background-image: url("../../public/images/about/about-2.jpg");
       }
       &:nth-child(4) {
         width: 42vw;
-        height: 45vh;
+        height: 50vh;
         left: 0vw;
-        top: 170vh;
+        top: 167vh;
         z-index: -1;
+        background-image: url("../../public/images/about/about-3.jpg");
       }
       &:nth-child(5) {
         width: 18vw;
@@ -62,6 +68,7 @@
         right: 15vw;
         top: 200vh;
         z-index: 1;
+        background-image: url("../../public/images/about/about-4.jpg");
       }
       &:nth-child(6) {
         width: 20vw;
@@ -69,6 +76,7 @@
         right: 0vw;
         top: 280vh;
         z-index: 1;
+        background-image: url("../../public/images/about/about-5.jpeg");
       }
       &:nth-child(7) {
         width: 30vw;
@@ -76,6 +84,7 @@
         left: 10vw;
         top: 335vh;
         z-index: -1;
+        background-image: url("../../public/images/about/about-6.jpg");
       }
       &:nth-child(8) {
         width: 42vw;
@@ -83,6 +92,7 @@
         right: 0vw;
         top: 430vh;
         z-index: 1;
+        background-image: url("../../public/images/about/about-7.jpg");
       }
       &:nth-child(9) {
         width: 33vw;
@@ -90,6 +100,7 @@
         left: 30vw;
         top: 520vh;
         z-index: -1;
+        background-image: url("../../public/images/about/about-8.jpeg");
       }
       &:nth-child(10) {
         width: 18vw;
@@ -97,6 +108,7 @@
         left: 0vw;
         top: 540vh;
         z-index: -1;
+        background-image: url("../../public/images/about/about-9.jpg");
       }
       &:nth-child(11) {
         width: 33vw;
@@ -104,6 +116,7 @@
         right: 10vw;
         top: 590vh;
         z-index: 2;
+        background-image: url("../../public/images/about/about-10.jpg");
       }
     }
 
@@ -150,6 +163,12 @@
         height: 35vh;
       }
     }
+    @include respon(phone-land) {
+      height: 150vh;
+      .image {
+        display: none;
+      }
+    }
     @include respon(phone-pot) {
       h1 {
         font-size: 4rem;
@@ -161,6 +180,7 @@
     position: relative;
     z-index: 1;
     background-color: #161a1d;
+    width: 100%;
 
     .text_container {
       padding: 25em 0 5em;
@@ -221,6 +241,9 @@
     @include respon(tb-pot) {
       .text_container {
         p {
+          font-size: 1.35rem;
+        }
+        li {
           font-size: 1.35rem;
         }
       }

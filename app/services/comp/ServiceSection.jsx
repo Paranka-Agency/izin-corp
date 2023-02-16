@@ -4,7 +4,6 @@ import Service from "./Service";
 import styles from "./ServiceSection.module.scss";
 
 const ServiceSection = ({ data, id }) => {
-  console.log(data);
   return (
     <section className={styles.service_container} id={id}>
       <div className={styles.description}>

@@ -44,7 +44,17 @@ const Navbar = () => {
     <nav
       className={`${styles.navigation} ${
         prevScroll.current < scrollTop ? styles.scroll : ""
-      } ${activeMobile ? styles.mobile_active : ""}`}
+      } ${activeMobile ? styles.mobile_active : ""} ${
+        path == "/about"
+          ? scrollTop > 5500
+            ? ""
+            : styles.dark
+          : path == "/services"
+          ? ""
+          : path == "/"
+          ? ""
+          : styles.dark
+      }`}
     >
       <button className={styles.toggle_button} onClick={handleActiveMobile}>
         {activeMobile ? (
@@ -53,20 +63,8 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faBars} className={styles.icon} />
         )}
       </button>
-      <div
-        className={`${styles.container} ${
-          path == "/about"
-            ? scrollTop > 5500
-              ? ""
-              : styles.dark
-            : path == "/services"
-            ? ""
-            : path == "/"
-            ? ""
-            : styles.dark
-        } `}
-      >
-        <h1>LOGO</h1>
+      <div className={`${styles.container}  `}>
+        <div className={styles.logo}></div>
         <ul className={styles.nav_list}>
           <Link
             prefetch={false}
