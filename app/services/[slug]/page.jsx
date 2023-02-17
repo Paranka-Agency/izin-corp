@@ -16,8 +16,8 @@ const page = ({ params }) => {
   const service = data.service.find((s) => s.slug == params.slug);
 
   return (
-    <main className={styles.main}>
-      <section className={styles.hero}>
+    <div className={styles.main}>
+      <section className={styles.hero} data-scroll-section>
         <h1>{service.title}</h1>
         <p>{service.desc}</p>
         <div className={styles.image_container}>
@@ -30,7 +30,7 @@ const page = ({ params }) => {
           />
         </div>
       </section>
-      <section className={styles.description}>
+      <section className={styles.description} data-scroll-section>
         <article>
           <h2>Syarat Perizinan</h2>
           <div className={styles.box}></div>
@@ -44,7 +44,7 @@ const page = ({ params }) => {
           <div className={styles.box}></div>
         </article>
       </section>
-      <section className={styles.price}>
+      <section className={styles.price} data-scroll-section>
         <div className={styles.image}></div>
         <div className={styles.price_detail}>
           <p>Start from:</p>
@@ -52,7 +52,7 @@ const page = ({ params }) => {
           <button>Contact Us</button>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

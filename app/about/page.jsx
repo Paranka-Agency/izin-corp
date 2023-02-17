@@ -32,8 +32,8 @@ const page = () => {
   }, [inView]);
 
   return (
-    <main className={styles.main} data-scroll-container>
-      <section className={styles.hero}>
+    <div className={styles.main}>
+      <section className={styles.hero} data-scroll-section>
         <motion.h1 animate={titleAnimate} transition={titleTransition}>
           IZIN <span>CORP</span>
         </motion.h1>
@@ -48,7 +48,7 @@ const page = () => {
         <div className={styles.image}>9</div>
         <div className={styles.image}>10</div>
       </section>
-      <section ref={ref} className={styles.about}>
+      <section ref={ref} className={styles.about} data-scroll-section>
         <div className={styles.text_container}>
           <p>
             IZIN CORP merupakan Konsultan berbadan hukum yang berfokus menangani
@@ -83,7 +83,7 @@ const page = () => {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

@@ -5,14 +5,14 @@ import services from "@/data/services";
 
 const page = () => {
   return (
-    <main className={styles.main}>
-      <section className={styles.hero}>
+    <div className={styles.main}>
+      <section className={styles.hero} data-scroll-section>
         <h1>OUR SERVICES</h1>
       </section>
       {services.map((service) => (
         <ServiceSection data={service} id={service.id} key={service.id} />
       ))}
-      <section className={styles.private_office_container}>
+      <section className={styles.private_office_container} data-scroll-section>
         <h1>OUR Private Office</h1>
         <div className={styles.office}>
           <div className={styles.description}>
@@ -30,7 +30,7 @@ const page = () => {
           <div className={styles.image}></div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

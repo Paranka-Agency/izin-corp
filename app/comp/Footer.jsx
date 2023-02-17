@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-scroll-section>
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.left}>

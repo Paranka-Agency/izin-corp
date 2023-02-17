@@ -5,7 +5,7 @@ import styles from "./ServiceSection.module.scss";
 
 const ServiceSection = ({ data, id }) => {
   return (
-    <section className={styles.service_container} id={id}>
+    <section className={styles.service_container} id={id} data-scroll-section>
       <div className={styles.description}>
         <h2>{data.title}</h2>
         <p>{data.desc}</p>

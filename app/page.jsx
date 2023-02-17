@@ -12,11 +12,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <section className={styles.hero}>
+    <div className={styles.main}>
+      <section className={styles.hero} data-scroll-section>
         <h1>IZIN CORP</h1>
       </section>
-      <section className={styles.about}>
+      <section className={styles.about} data-scroll-section>
         <div className={styles.container}>
           <h1>SEKILAS TENTANG KAMI</h1>
           <p>
@@ -31,7 +31,7 @@ export default function Home() {
           <div className={`${styles.image} ${styles.right}`}></div>
         </div>
       </section>
-      <section className={styles.service}>
+      <section className={styles.service} data-scroll-section>
         <div className={styles.container}>
           <h2>We are here to give you special service.</h2>
           <div className={styles.list}>
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={styles.review}>
+      <section className={styles.review} data-scroll-section>
         <div className={styles.container}>
           <h2>Apa pendapat orang lain tentang kami?</h2>
           <div className={styles.card_container}>
@@ -51,6 +51,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

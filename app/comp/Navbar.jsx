@@ -7,8 +7,8 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.scss";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
-  const path = usePathname();
+const Navbar = ({ path }) => {
+  // const path = usePathname();
 
   const [scrollTop, setScrollTop] = useState(0);
   const prevScroll = useRef();
