@@ -108,7 +108,13 @@
         color: white;
         z-index: 1;
         position: relative;
+        transition: 1s;
       }
+
+      .is-reveal {
+        color: red;
+      }
+
       p {
         position: relative;
         width: 60%;
