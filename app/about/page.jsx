@@ -1,55 +1,72 @@
 "use client";
-import React, { useEffect } from "react";
-import styles from "./about.module.scss";
+import React, { useEffect, useRef } from "react";
+import "./about.scss";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Footer from "../comp/Footer";
 
-import { motion, useAnimation, useScroll } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
-  const { ref, inView } = useInView({});
-  const titleAnimate = useAnimation();
-  const titleTransition = useAnimation();
-
   useEffect(() => {
-    if (inView) {
-      titleAnimate.start({
-        opacity: 0,
-        // display: "none",
+    gsap.to(".title", {
+      clipPath: "inset(0% 0 0 0)",
+      duration: 0.75,
+      opacity: 1,
+    });
+
+    gsap.to(".title", {
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top 90%",
+        end: "top 55%",
+        scrub: true,
+      },
+      opacity: 0,
+    });
+
+    let images = gsap.utils.toArray(".image");
+
+    gsap.to(images, {
+      clipPath: "inset(0% 0 0 0)",
+      delay: 0.75,
+    });
+
+    images.forEach((image) => {
+      ScrollTrigger.create({
+        trigger: image,
+        scrub: 1,
+        start: "top bottom",
+        end: "bottom start",
+        // markers: true,
+        onUpdate: (self) => {
+          gsap.to(image, {
+            backgroundPosition: `50% ${self.progress * 25}%`,
+          });
+        },
       });
-      titleTransition.start({
-        type: "spring",
-      });
-    }
-    if (!inView) {
-      titleAnimate.start({
-        // display: "block",
-        opacity: 1,
-      });
-      titleTransition.start({
-        type: "spring",
-      });
-    }
-  }, [inView]);
+    });
+  });
 
   return (
-    <div className={styles.main}>
-      <section className={styles.hero} data-scroll-section>
-        <motion.h1 animate={titleAnimate} transition={titleTransition}>
+    <div className="about_main">
+      <section className="hero">
+        <h1 className="title">
           IZIN <span>CORP</span>
-        </motion.h1>
-        <div className={styles.image}>1</div>
-        <div className={styles.image}>2</div>
-        <div className={styles.image}>3</div>
-        <div className={styles.image}>4</div>
-        <div className={styles.image}>5</div>
-        <div className={styles.image}>6</div>
-        <div className={styles.image}>7</div>
-        <div className={styles.image}>8</div>
-        <div className={styles.image}>9</div>
-        <div className={styles.image}>10</div>
+        </h1>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
+        <div className="image"></div>
       </section>
-      <section ref={ref} className={styles.about} data-scroll-section>
-        <div className={styles.text_container}>
+      <section className="about">
+        <div className="text_container">
           <p>
             IZIN CORP merupakan Konsultan berbadan hukum yang berfokus menangani
             perizinan berusaha, manajemen bisnis, dan perpajakan badan usaha
@@ -71,9 +88,9 @@ const page = () => {
             <li>Komitmen</li>
           </ol>
         </div>
-        <div className={styles.certification}>
-          <div className={styles.image}></div>
-          <div className={styles.text}>
+        <div className="certification">
+          <div className="img"></div>
+          <div className="text">
             <h1>Sertifikasi</h1>
             <ul>
               <li>Sertifikasi A</li>
@@ -83,6 +100,7 @@ const page = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

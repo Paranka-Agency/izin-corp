@@ -1,6 +1,6 @@
 @import "../base.scss";
 
-.main {
+.about_main {
   min-height: 100vh;
 
   section {
@@ -12,7 +12,7 @@
     height: 610vh;
     z-index: 3;
 
-    h1 {
+    .title {
       width: 100%;
       font-family: "Montserrat", sans-serif;
       font-weight: 800;
@@ -24,6 +24,8 @@
       transform: translateY(40vh);
       z-index: 0;
 
+      clip-path: inset(100% 0 0 0);
+
       // visibility: hidden;
 
       span {
@@ -34,9 +36,10 @@
     .image {
       background-color: gray;
       position: absolute;
-      background-position: center;
-      background-size: cover;
+      background-position: 50% 0;
+      background-size: auto 150%;
       background-repeat: no-repeat;
+      clip-path: inset(100% 0 0 0);
 
       &:nth-child(2) {
         width: 20vw;
@@ -210,7 +213,7 @@
       padding: 20rem 0;
       display: flex;
 
-      .image {
+      .img {
         width: 42%;
         height: 400px;
         margin-right: 4em;
@@ -249,7 +252,7 @@
       }
 
       .certification {
-        .image {
+        .img {
           height: 250px;
         }
         .text {
@@ -264,7 +267,7 @@
     }
     @include respon(phone-pot) {
       .certification {
-        .image {
+        .img {
           width: 35%;
           height: 200px;
         }
