@@ -24,6 +24,7 @@ const Footer = () => {
                 className={styles.logo}
                 fill={true}
                 src={"/images/logo-dark.png"}
+                alt="logo"
               />
             </div>
             <div className={styles.item}>
@@ -58,7 +59,7 @@ const Footer = () => {
             <div className={styles.service_container}>
               {services.map((s) => {
                 return (
-                  <div className={styles.item}>
+                  <div className={styles.item} key={s.id}>
                     <h4>{s.title}</h4>
                     <div className={styles.link_container}>
                       {s.service.map((s) => (
@@ -66,6 +67,7 @@ const Footer = () => {
                           className={styles.link}
                           prefetch={false}
                           href={`services/${s.slug}`}
+                          key={s.id}
                         >
                           {s.title}
                         </Link>

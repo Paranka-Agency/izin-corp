@@ -20,7 +20,7 @@ const ServiceCard = ({ data, id }) => {
         <div className="info">
           <ul>
             {data.service.map((service) => {
-              return <li>{service.title}</li>;
+              return <li key={service.id}>{service.title}</li>;
             })}
           </ul>
         </div>
