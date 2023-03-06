@@ -36,7 +36,7 @@
     .image {
       background-color: gray;
       position: absolute;
-      background-position: 50% 0;
+      background-position: 50% 30%;
       background-size: auto 150%;
       background-repeat: no-repeat;
       clip-path: inset(100% 0 0 0);
@@ -47,7 +47,7 @@
         left: 8vw;
         top: 50vh;
         z-index: -1;
-        background-image: url("../../public/images/about/about-1.jpg");
+        background-image: url("../../public/images/about/about-9.jpg");
       }
       &:nth-child(3) {
         width: 42vw;
@@ -79,7 +79,7 @@
         right: 0vw;
         top: 280vh;
         z-index: 1;
-        background-image: url("../../public/images/about/about-5.jpeg");
+        background-image: url("../../public/images/about/about-5.jpg");
       }
       &:nth-child(7) {
         width: 30vw;
@@ -103,7 +103,7 @@
         left: 30vw;
         top: 520vh;
         z-index: -1;
-        background-image: url("../../public/images/about/about-8.jpeg");
+        background-image: url("../../public/images/about/about-8.jpg");
       }
       &:nth-child(10) {
         width: 18vw;
@@ -111,7 +111,7 @@
         left: 0vw;
         top: 540vh;
         z-index: -1;
-        background-image: url("../../public/images/about/about-9.jpg");
+        background-image: url("../../public/images/about/about-1.jpg");
       }
       &:nth-child(11) {
         width: 33vw;
@@ -209,11 +209,11 @@
       }
     }
 
-    .certification {
+    .offer {
       padding: 20rem 0;
       display: flex;
 
-      .img {
+      .offer_image {
         width: 42%;
         height: 400px;
         margin-right: 4em;
@@ -224,7 +224,7 @@
         font-family: "Montserrat", sans-serif;
         color: white;
 
-        h1 {
+        h2 {
           font-size: 2rem;
           font-weight: 600;
           letter-spacing: 0.2em;
@@ -241,6 +241,45 @@
       }
     }
 
+    .certification {
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      padding-bottom: 30rem;
+
+      h2 {
+        margin-bottom: 10rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .certification_container {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: start;
+        row-gap: 7.5rem;
+        text-decoration: none;
+        list-style: none;
+
+        li {
+          width: 30%;
+          font-size: 1.75rem;
+          font-weight: bold;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.75);
+          transform: 1s;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+
     @include respon(tb-pot) {
       .text_container {
         p {
@@ -251,8 +290,8 @@
         }
       }
 
-      .certification {
-        .img {
+      .offer {
+        .offer_image {
           height: 250px;
         }
         .text {
@@ -266,8 +305,8 @@
       }
     }
     @include respon(phone-pot) {
-      .certification {
-        .img {
+      .offer {
+        .offer_image {
           width: 35%;
           height: 200px;
         }

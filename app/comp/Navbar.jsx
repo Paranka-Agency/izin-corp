@@ -4,8 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./Navbar.module.scss";
+import "./Navbar.scss";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = ({ path }) => {
   // const path = usePathname();
@@ -42,57 +47,53 @@ const Navbar = ({ path }) => {
 
   return (
     <nav
-      className={`${styles.navigation} ${
-        prevScroll.current < scrollTop ? styles.scroll : ""
-      } ${activeMobile ? styles.mobile_active : ""} ${
+      className={`navigation ${
+        prevScroll.current < scrollTop ? "scroll" : ""
+      } ${activeMobile ? "mobile_active" : ""} ${
         path == "/about"
           ? scrollTop > 5500
             ? ""
-            : styles.dark
+            : "dark"
           : path == "/services"
           ? ""
           : path == "/"
           ? ""
-          : styles.dark
+          : "dark"
       }`}
     >
-      <button className={styles.toggle_button} onClick={handleActiveMobile}>
+      <button className="toggle_button" onClick={handleActiveMobile}>
         {activeMobile ? (
-          <FontAwesomeIcon icon={faXmark} className={styles.icon} />
+          <FontAwesomeIcon icon={faXmark} className="icon" />
         ) : (
-          <FontAwesomeIcon icon={faBars} className={styles.icon} />
+          <FontAwesomeIcon icon={faBars} className="icon" />
         )}
       </button>
-      <div className={`${styles.container}  `}>
-        <div className={styles.logo}></div>
-        <ul className={styles.nav_list}>
+      <div className="container">
+        <div className="logo"></div>
+        <ul className="nav_list">
           <Link
             prefetch={false}
-            className={`${styles.nav_item} ${path == "/" ? styles.bold : ""}`}
+            className={`nav_item ${path == "/" ? "bold" : ""}`}
             href={"/"}
           >
             Home
           </Link>
           <Link
             prefetch={false}
-            className={`${styles.nav_item} ${
-              path == "/about" ? styles.bold : ""
-            }`}
+            className={`nav_item ${path == "/about" ? "bold" : ""}`}
             href={"/about"}
           >
             About Us
           </Link>
           <Link
             prefetch={false}
-            className={`${styles.nav_item} ${
-              path == "/services" ? styles.bold : ""
-            }`}
+            className={`nav_item ${path == "/services" ? "bold" : ""}`}
             href={"/services"}
           >
             Services
           </Link>
           <Link prefetch={false} href={""}>
-            <button className={styles.nav_button}>Contact Us</button>
+            <button className="nav_button">Contact Us</button>
           </Link>
           {/* <Link prefetch={false} 
             className={`${styles.nav_item} ${

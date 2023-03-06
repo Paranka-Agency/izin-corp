@@ -9,6 +9,11 @@ import "./globals.scss";
 export default function RootLayout({ children }) {
   const containerRef = useRef(null);
   const path = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <html lang="en">
       {/*
@@ -17,19 +22,9 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body>
-        <LocomotiveScrollProvider
-          options={{
-            smooth: true,
-          }}
-          watch={[path]}
-          containerRef={containerRef}
-        >
-          <main data-scroll-container ref={containerRef}>
-            <Navbar path={path} data-scroll-section />
-            {children}
-            <Footer data-scroll-section />
-          </main>
-        </LocomotiveScrollProvider>
+        <Navbar path={path} />
+        {children}
+        <Footer />
       </body>
     </html>
   );

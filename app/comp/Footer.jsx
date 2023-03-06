@@ -10,6 +10,7 @@ import {
   faLocationDot,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -40,6 +41,14 @@ const Footer = () => {
             <div className={styles.item}>
               <FontAwesomeIcon icon={faPhone} className={styles.icon} />
               <h5>+62 813 34937494</h5>
+            </div>
+            <div className={styles.item}>
+              <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+              <h5>@izin.corp</h5>
+            </div>
+            <div className={styles.item}>
+              <FontAwesomeIcon icon={faTiktok} className={styles.icon} />
+              <h5>izin.corp</h5>
             </div>
             <button>Contact Us</button>
           </div>

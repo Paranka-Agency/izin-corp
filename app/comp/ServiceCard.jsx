@@ -1,23 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import styles from "./ServiceCard.module.scss";
+import "./ServiceCard.scss";
 
 const ServiceCard = ({ data, id }) => {
   return (
-    <Link href={`/services#${id}`} className={styles.item}>
+    <Link href={`/services#${id}`} className="service_card">
       <div
-        className={`${styles.card} ${
+        className={`card ${
           id == "SR01"
-            ? styles.image1
+            ? "image1"
             : id == "SR02"
-            ? styles.image2
+            ? "image2"
             : id == "SR03"
-            ? styles.image3
+            ? "image3"
             : ""
         }`}
       >
-        <div className={styles.info}>
+        <div className="info">
           <ul>
             {data.service.map((service) => {
               return <li>{service.title}</li>;

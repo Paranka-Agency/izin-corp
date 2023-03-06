@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./ReviewCard.module.scss";
+import "./ReviewCard.scss";
 
 const ReviewCard = () => {
   return (
-    <div className={styles.card}>
-      <div className={styles.image}></div>
-      <div className={styles.info}>
+    <div className="review_card">
+      <div className="image"></div>
+      <div className="info">
         <p>
           Lorem ipsum dolor sit amet consectetur. Volutpat ornare pellentesque
           nulla ultrices. Donec lectus in sodales lorem egestas non diam vel.

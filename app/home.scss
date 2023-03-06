@@ -1,0 +1,343 @@
+@import "./base.scss";
+
+.home_main {
+  // min-height: 100vh;
+  background-image: linear-gradient(
+    150deg,
+    hsl(206deg 14% 10%) 0%,
+    hsl(207deg 13% 17%) 79%,
+    hsl(204deg 12% 24%) 95%,
+    hsl(207deg 11% 31%) 100%,
+    hsl(207deg 10% 38%) 101%,
+    hsl(207deg 9% 45%) 102%,
+    hsl(206deg 9% 56%) 102%,
+    hsl(210deg 10% 67%) 101%,
+    hsl(207deg 10% 78%) 101%,
+    hsl(216deg 9% 89%) 100%,
+    hsl(0deg 0% 100%) 100%
+  );
+  background-attachment: fixed;
+  overflow: hidden;
+
+  section {
+    min-height: 100vh;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero_title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12rem;
+      letter-spacing: 0.1em;
+      color: white;
+      text-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+      clip-path: inset(100% 0 0 0);
+    }
+
+    @include respon(desktop-small) {
+      .hero_title {
+        font-size: 8rem;
+      }
+    }
+    @include respon(tb-pot) {
+      .hero_title {
+        font-size: 6rem;
+      }
+    }
+    @include respon(phone-land) {
+      .hero_title {
+        font-size: 4rem;
+      }
+    }
+    @include respon(phone-pot) {
+      .hero_title {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .about_container {
+      width: 80%;
+      max-width: 1200px;
+      padding: 60px 80px;
+      min-height: 500px;
+      border-radius: 5px;
+      background-color: grey;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      position: relative;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("../public/images/home/home_about_3.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      .image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      .left {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("../public/images/home/home_about_1.jpg");
+      }
+      .right {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("../public/images/home/home_about_2.jpg");
+      }
+
+      .about_title {
+        margin-bottom: 0.5em;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        font-size: 3.8rem;
+        color: white;
+        z-index: 1;
+        position: relative;
+        transition: 1s;
+      }
+
+      p {
+        position: relative;
+        width: 60%;
+        font-weight: 300;
+        font-family: "Pridi", serif;
+        font-size: 1.2rem;
+        color: white;
+        z-index: 1;
+      }
+      button {
+        @include button(main);
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+      }
+      .image {
+        position: absolute;
+        border-radius: 5px;
+        z-index: 0;
+        background-color: darkgray;
+
+        &.left {
+          width: 40%;
+          max-width: 600px;
+          height: 280px;
+          left: -50px;
+          bottom: -100px;
+        }
+        &.right {
+          width: 50%;
+          max-width: 650px;
+          height: 350px;
+          top: -50px;
+          right: -100px;
+        }
+      }
+    }
+
+    @include respon(desktop-small) {
+      .about_container {
+        .about_title {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    @include respon(tb-pot) {
+      .container {
+        height: auto;
+        min-height: auto;
+        .about_title {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 1rem;
+          margin-bottom: 2rem;
+          width: 100%;
+        }
+        button {
+          position: static;
+          font-size: 1rem;
+        }
+        .image,
+        .left,
+        .right {
+          display: none;
+          visibility: hidden;
+        }
+      }
+    }
+    @include respon(phone-land) {
+      .about_container {
+        padding: 50px;
+        .about_title {
+          font-size: 1.8rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        button {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    @include respon(phone-pot) {
+      .about_container {
+        padding: 30px;
+        .about_title {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        button {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    // height: 200vh;
+
+    .service_container {
+      max-width: 1200px;
+      width: 80%;
+      display: flex;
+      margin: 0 auto;
+      justify-content: flex-start;
+      align-items: center;
+
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 2.5rem;
+        min-width: 220px;
+        color: white;
+        margin-right: 2em;
+      }
+
+      .service_list {
+        display: flex;
+        column-gap: 3rem;
+        padding-right: 1rem;
+      }
+    }
+
+    @include respon(tb-pot) {
+      .service_container {
+        h2 {
+          margin-right: 3em;
+        }
+      }
+    }
+    @include respon(phone-land) {
+      .service_container {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .review_container {
+      padding: 80px 60px;
+      width: 80%;
+      max-width: 1200px;
+      min-height: 550px;
+      border-radius: 5px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      position: relative;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("../public/images/home/home_review.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      h2 {
+        padding: 80px 0;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+        width: 300px;
+        color: white;
+      }
+
+      .review_card_container {
+        display: flex;
+        column-gap: 10px;
+        position: absolute;
+        top: 70px;
+        left: 26rem;
+      }
+    }
+
+    @include respon(desktop-small) {
+      .review_container {
+        padding: 40px 60px;
+        h2 {
+          padding: 10px 0;
+          margin-bottom: 1rem;
+        }
+        .review_card_container {
+          position: static;
+        }
+      }
+    }
+    @include respon(tb-pot) {
+      .review_container {
+        h2 {
+          width: 70%;
+        }
+        .review_card_container {
+          margin: 0 auto;
+          overflow: auto;
+        }
+      }
+    }
+    @include respon(phone-land) {
+      .review_container {
+        height: auto;
+        min-height: auto;
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    @include respon(phone-pot) {
+      .review_container {
+        padding: 0 10px 20px;
+        h2 {
+          font-size: 1.25rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
