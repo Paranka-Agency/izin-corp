@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useContext } from "react";
+import { useRef, useEffect } from "react";
 import Service from "./Service";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -65,11 +65,6 @@ const ServiceSection = ({ data, id }) => {
           {data.desc}
         </p>
       </div>
-      {/* <div className="list">
-        {data.service.map((service) => (
-          <Service data={service} key={service.id} parentId={id} />
-        ))}
-      </div> */}
       <div ref={list} className="list">
         <Swiper
           modules={[Pagination, Navigation]}
@@ -79,8 +74,8 @@ const ServiceSection = ({ data, id }) => {
           navigation
         >
           {data.service.map((service) => (
-            <SwiperSlide>
-              <Service data={service} key={service.id} parentId={id} />
+            <SwiperSlide key={service.id}>
+              <Service data={service} parentId={id} />
             </SwiperSlide>
           ))}
         </Swiper>

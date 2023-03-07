@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import ServiceSection from "./comp/ServiceSection";
 import "./services.scss";
 import services from "@/data/services";
@@ -28,7 +28,7 @@ const page = () => {
         <div className="line services_hero_line"></div>
       </section>
       {services.map((service) => (
-        <ServiceSection data={service} id={service.id} key={service.id} />
+        <ServiceSection key={service.slug} data={service} id={service.id} />
       ))}
       <section className="private_office_container">
         <h1>OUR Private Office</h1>
