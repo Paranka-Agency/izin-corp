@@ -10,9 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 import services from "@/data/services";
 import Image from "next/image";
-import { delay } from "framer-motion";
 
-const page = ({ params }) => {
+const page = ({ params, searchParams }) => {
   const data = services.find((s) => {
     return s.service.find((v) => {
       return v.slug == params.slug;
