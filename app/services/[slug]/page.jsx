@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./service.scss";
 
@@ -12,14 +12,16 @@ import services from "@/data/services";
 import Image from "next/image";
 
 const page = ({ params }) => {
-  const data = services.find((s) => {
-    return s.service.find((v) => {
-      return v.slug == params.slug;
-    });
-  });
+  const [service, setService] = useState({});
 
-  const service = data.service.find((s) => s.slug == params.slug);
-  // console.log(service);
+  useEffect(() => {
+    const data = services.find((s) => {
+      return s.service.find((v) => {
+        return v.slug == params.slug;
+      });
+    });
+    setService(data.service.find((s) => s.slug == params.slug));
+  }, []);
 
   useEffect(() => {
     gsap.fromTo(
@@ -134,7 +136,7 @@ const page = ({ params }) => {
           clipPath: "inset(0 0% 0 0)",
         }
       );
-  });
+  }, []);
 
   return (
     <div className="service_main">
@@ -169,7 +171,7 @@ const page = ({ params }) => {
         <div className="price_image"></div>
         <div className="price_detail">
           <p className="price_text">Start from:</p>
-          <h3 className="price">{service.price}</h3>
+          <h3 className="price">Rp. {service.price}</h3>
           <button className="price_button">Contact Us</button>
         </div>
       </section>
