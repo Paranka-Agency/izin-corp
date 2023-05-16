@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 import services from "@/data/services";
 import Image from "next/image";
 
-const page = ({ params, searchParams }) => {
+const page = ({ params }) => {
   const data = services.find((s) => {
     return s.service.find((v) => {
       return v.slug == params.slug;
@@ -19,6 +19,7 @@ const page = ({ params, searchParams }) => {
   });
 
   const service = data.service.find((s) => s.slug == params.slug);
+  // console.log(service);
 
   useEffect(() => {
     gsap.fromTo(
@@ -168,7 +169,7 @@ const page = ({ params, searchParams }) => {
         <div className="price_image"></div>
         <div className="price_detail">
           <p className="price_text">Start from:</p>
-          <h3 className="price">Rp. {service.price}</h3>
+          <h3 className="price">{service.price}</h3>
           <button className="price_button">Contact Us</button>
         </div>
       </section>
